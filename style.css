@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+.maincontainer{
+   background-color: #3c87ff;
+   justify-content: center;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   gap: 80px;
+   padding: 15px 15px;
+   max-height: max-content;
+   width: 100vw;
+   height: 100vh;
+   overflow-y: scroll;
+
+}
+h1{
+    background-color: brown;
+    margin: 5px;
+    padding: 8px;
+    border-radius: 8px;
+    
+}
+
+.inptfields{
+    margin: 5px;
+    width: 500px;
+    background-color: rgb(204, 204, 204);
+    padding: 10px;
+    height: 450px;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type=date], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button{
+    height: 30px;
+    background-color: #4CAF50;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 5px;
+}
+.filters{
+    display: flex;
+    justify-content: flex-start;
+    padding: 18px 25px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    width: 500px;
+    gap: 30px;
+}
+.task{
+    background-color: rgb(204, 204, 204);
+    width: 500px;
+    padding: 18px 25px;
+    border: 2px solid brown;
+    margin: 5px;
+}
+
+#msg{
+    color: red;
+}
+
+#msg-two{
+    color: red;
+}
+#msg-three{
+    color: red;
+}
+
+

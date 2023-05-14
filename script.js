@@ -6,7 +6,7 @@ let msgTwo = document.getElementById('msg-two');
 let textArea = document.getElementById('description');
 let msgThree = document.getElementById('msg-three');
 let tasks = document.getElementById('tasks');
-
+let completed = document.getElementById('completed');
 
 
 
@@ -68,7 +68,7 @@ let createTasks = () => {
         <span class="options">
             <button onClick ="editTask(this)">Edit</button>
             <button onClick ="deleteTask(this)">Delete</button>
-            <button>Mark Completed</button>
+            <button onClick = "markCompleted(this)">Mark Completed</button>
         
         </span>
     </div>`);
@@ -94,6 +94,41 @@ let editTask =(e) => {
     deleteTask(e);
 
 };
+
+let newData = [];
+
+let acceptNewdata = () => {
+  newData.push({
+    text: textInput.value,
+    date: dateInput.value,
+    description: textArea.value,
+  });
+};
+
+let updateTasks = () => {
+    completed.innerHTML = "";
+    newData.forEach((x, y) => {
+      completed.innerHTML += `
+        <div id=${y} class="task">
+          <span>${x.text}</span> <br>
+          <span>${x.date}</span> <br>
+          <p>${x.description}</p> <br>
+          <span class="options">
+            <button onClick="editTask(this)">Edit</button>
+            <button onClick="deleteTask(this)">Delete</button>
+            <button onClick="markCompleted(this)">Mark Completed</button>
+          </span>
+        </div>
+      `;
+    });
+}
+
+
+let markCompleted = (e) => {
+    e.parentElement.parentElement.remove();
+    acceptNewdata();
+    updateTasks();
+  };
 
 
 

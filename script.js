@@ -97,13 +97,11 @@ let editTask =(e) => {
 
 let newData = [];
 
-let acceptNewdata = () => {
-  newData.push({
-    text: textInput.value,
-    date: dateInput.value,
-    description: textArea.value,
-  });
+let acceptNewdata = (completedTask) => {
+    newData.push(completedTask);
 };
+
+localStorage.setItem("newData", JSON.stringify(newData));
 
 let updateTasks = () => {
     completed.innerHTML = "";
@@ -124,12 +122,22 @@ let updateTasks = () => {
 }
 
 let markCompleted = (e) => {
-    e.parentElement.parentElement.remove();
-    acceptNewdata();
+    let selectedTask = e.parentElement.parentElement;
+
+    
+    let completedTask = {
+        text: selectedTask.children[0].innerHTML,
+        date: selectedTask.children[2].innerHTML,
+        description: selectedTask.children[4].innerHTML
+    };
+
+    
+    selectedTask.remove();
+    acceptNewdata(completedTask);
     updateTasks();
-  };
+};
 
-
+    
 
 let resetForm = () => {
     textInput.value ="";
@@ -143,3 +151,12 @@ let resetForm = () => {
     createTasks();
 
 })();
+
+
+(()=>{
+    localStorage.setItem("newData", JSON.stringify(newData));
+    updateTasks();
+
+})();
+
+

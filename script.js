@@ -123,7 +123,6 @@ let updateTasks = () => {
     });
 }
 
-
 let markCompleted = (e) => {
     e.parentElement.parentElement.remove();
     acceptNewdata();

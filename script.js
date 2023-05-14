@@ -146,15 +146,15 @@ let resetForm = () => {
 
 }
 
-(()=>{
-    data = JSON.parse(localStorage.getItem("data"));
+(()=>{ 
+   data = JSON.parse(localStorage.getItem("data"));
     createTasks();
 
 })();
 
 
 (()=>{
-    localStorage.setItem("newData", JSON.stringify(newData));
+    newData = JSON.parse("newData", JSON.stringify(newData));
     updateTasks();
 
 })();
